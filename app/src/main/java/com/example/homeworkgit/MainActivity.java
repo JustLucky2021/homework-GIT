@@ -14,6 +14,9 @@ public class MainActivity extends AppCompatActivity {
     StringBuilder test = new StringBuilder();
     test = "Привет";
         Log.d("homeworkGit", "" + test);
+        Log.d("homeworkGit", "" + test);
+        Log.d("homeworkGit", "" + test);
+        Log.d("homeworkGit", "" + test);
 
     }
 }
