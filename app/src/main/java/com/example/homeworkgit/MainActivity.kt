@@ -13,11 +13,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val btnStart = findViewById<Button>(R.id.btnStart)
             btnStart.setOnClickListener {
-                val startOrdersList = Intent(this, OrdersList::class.java).apply {
-                    val phoneNumber = findViewById<EditText>(R.id.etPhoneNumber)
-                    putExtra("phoneNumber", "${phoneNumber.text}")
-                    startActivity(this)
-                }
+                val phoneNumber = findViewById<EditText>(R.id.etPhoneNumber)
+                OrdersList.newInstance(activity = this, (phoneNumber.text).toString())
             }
         }
     }
