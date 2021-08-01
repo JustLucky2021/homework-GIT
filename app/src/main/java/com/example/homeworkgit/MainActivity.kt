@@ -1,20 +1,26 @@
 package com.example.homeworkgit
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Navigation {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val btnStart = findViewById<Button>(R.id.btnStart)
-            btnStart.setOnClickListener {
-                val phoneNumber = findViewById<EditText>(R.id.etPhoneNumber)
-                OrdersList.newInstance(activity = this, phoneNumber = (phoneNumber.text).toString())
-            }
-        }
+        openAuthFragment()
     }
+
+    override fun openOrdersListFragment(phoneNumber: String) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.flRoot, OrdersListFragment.newInstance(phoneNumber = phoneNumber))
+            .commit()
+    }
+
+    override fun openAuthFragment() {
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.flRoot, AuthFragment())
+            .commit()
+    }
+}
