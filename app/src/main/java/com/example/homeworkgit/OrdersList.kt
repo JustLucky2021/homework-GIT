@@ -22,7 +22,6 @@ class OrdersList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_orders_list)
         val phoneNum = intent.getStringExtra("$PHONE_NUMBER")
-        //Log.d("TAG", "Order: $phoneNum")
         val recycle = findViewById<TextView>(R.id.tvRecycle)
         recycle.append(" $phoneNum")
     }
