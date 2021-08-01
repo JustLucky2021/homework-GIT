@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         val btnStart = findViewById<Button>(R.id.btnStart)
             btnStart.setOnClickListener {
                 val phoneNumber = findViewById<EditText>(R.id.etPhoneNumber)
-                OrdersList.newInstance(activity = this, (phoneNumber.text).toString())
+                OrdersList.newInstance(activity = this, phoneNumber = (phoneNumber.text).toString())
             }
         }
     }

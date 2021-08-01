@@ -3,8 +3,6 @@ package com.example.homeworkgit
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
